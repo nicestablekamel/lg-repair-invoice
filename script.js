@@ -23,6 +23,7 @@ function formatMoney(value) {
 
 function getFormData() {
   return {
+    dechargeDate: $("dechargeDate").value.trim(),
     companyName: $("companyName").value.trim(),
     companyPhone: $("companyPhone").value.trim(),
     companyEmail: $("companyEmail").value.trim(),
@@ -74,6 +75,10 @@ function invoiceTemplate(data, repairman = false) {
         <div class="info-item">
           <div class="label">Nom et prénom</div>
           <div class="value">${escapeHtml(data.clientName)}</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Date de réception</div>
+          <div class="value">${escapeHtml(data.dechargeDate)}</div>
         </div>
         <div class="info-item">
           <div class="label">Numéro</div>
