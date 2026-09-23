@@ -24,13 +24,14 @@ function formatMoney(value) {
 function getFormData() {
   return {
     dechargeDate: $("dechargeDate").value.trim(),
+    dechargeDate: $("recDate").value.trim(),
     companyName: $("companyName").value.trim(),
     companyPhone: $("companyPhone").value.trim(),
     companyEmail: $("companyEmail").value.trim(),
     companyAddress: $("companyAddress").value.trim(),
     clientName: $("clientName").value.trim(),
     clientPhone: $("clientPhone").value.trim(),
-    clientEmail: $("clientEmail").value.trim(),
+    
     productCategory: $("productCategory").value,
     serialNumber: $("serialNumber").value.trim(),
     problemDescription: $("problemDescription").value.trim(),
@@ -77,17 +78,19 @@ function invoiceTemplate(data, repairman = false) {
           <div class="value">${escapeHtml(data.clientName)}</div>
         </div>
         <div class="info-item">
-          <div class="label">Date de réception</div>
-          <div class="value">${escapeHtml(data.dechargeDate)}</div>
-        </div>
-        <div class="info-item">
           <div class="label">Numéro</div>
           <div class="value">${escapeHtml(data.clientPhone)}</div>
         </div>
         <div class="info-item">
-          <div class="label">Email</div>
-          <div class="value">${escapeHtml(data.clientEmail || "—")}</div>
+          <div class="label">Date de réception</div>
+          <div class="value">${escapeHtml(data.dechargeDate)}</div>
         </div>
+        <div class="info-item">
+          <div class="label">Date de récuperation</div>
+          <div class="value">${escapeHtml(data.recDate)}</div>
+        </div>
+        
+        
       </div>
     </div>
 
